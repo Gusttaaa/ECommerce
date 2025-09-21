@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="star">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <h4>R$ ${product.price.toFixed(2).replace('.', ',')}</h4>
+                    <h4>R$ ${parseFloat(product.price).toFixed(2).replace('.', ',')}</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
             `;

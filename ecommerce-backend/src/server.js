@@ -1,4 +1,15 @@
+
+// Carrega as variáveis de ambiente do arquivo .env
 require('dotenv').config();
+
+// --- INÍCIO DO TESTE DE DIAGNÓSTICO ---
+console.log("--- TESTE DE DIAGNÓSTICO ---");
+console.log("Usuário do DB:", process.env.DB_USER);
+console.log("Senha do DB:", process.env.DB_PASSWORD);
+console.log("Banco de Dados:", process.env.DB_DATABASE);
+console.log("----------------------------");
+// --- FIM DO TESTE DE DIAGNÓSTICO ---
+
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
