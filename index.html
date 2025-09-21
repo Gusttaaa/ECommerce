@@ -4,196 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECommerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
 </head>
 <body>
-    
-    <section id="header">
-        <a href="#"><img src="assets/logo.png" class="logo" alt="Logo"></a>
 
-        <div>
+    <header id="header">
+        <a href="#"><img src="assets/logo.png" class="logo" alt="Logo"></a>
+        <nav>
             <ul id="navbar">
                 <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="carrinho.html"><i class="far fa-shopping-bag"></i></a></li>
-
             </ul>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <section id="hero">
-        <h4>Bem vindo(a)!</h4>
-        <h2>Notebooks bons</h2>
-        <h1>Com valores baixos!</h1>
-        <p>Promoções de até 70% de desconto!</p>
-        <button>Compre aqui!</button>
-    </section>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Performance e Design em um só lugar</h2>
+                <h1>Encontre o Notebook Perfeito para Você</h1>
+                <p>As melhores marcas com ofertas exclusivas e entrega para todo o Brasil.</p>
+                <a href="#products" class="cta-button">Ver Ofertas</a>
+            </div>
+            </section>
 
-    <section id="feature" class="section-p1">
-        <div class="fe-box">
-            <img src="assets/features/f1.png" alt="Feature 1">
-            <h6>Entrega Grátis!</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f2.png" alt="Feature 1">
-            <h6>Pedidos Online!</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f3.png" alt="Feature 1">
-            <h6>Economize!</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f4.png" alt="Feature 1">
-            <h6>Promoções!</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f5.png" alt="Feature 1">
-            <h6>Vendas por amor!</h6>
-        </div>
-        <div class="fe-box">
-            <img src="assets/features/f6.png" alt="Feature 1">
-            <h6>Suporte 24h!</h6>
-        </div>
-    </section>
+        <section id="features" class="section-p1">
+            <div class="feature-box">
+                <img src="assets/features/f1.png" alt="Entrega Grátis">
+                <h6>Entrega Grátis</h6>
+            </div>
+            <div class="feature-box">
+                <img src="assets/features/f2.png" alt="Pedidos Online">
+                <h6>Pedidos Online</h6>
+            </div>
+            <div class="feature-box">
+                <img src="assets/features/f6.png" alt="Suporte 24h">
+                <h6>Suporte 24h</h6>
+            </div>
+             <div class="feature-box">
+                <img src="assets/features/f3.png" alt="Economize">
+                <h6>Economize</h6>
+            </div>
+        </section>
 
-    <section id="produto1" class="section-p1">
-        <h2>Produtos em Destaque</h2>
-        <p>Notebooks mais vendidos nos últimos meses</p>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="assets/produtos/p1.jpg" alt="">
-                <div class="desc">
-                    <span>Dell</span>
-                    <h5>Notebook Gamer Dell G15</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R$4889,90</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        <section id="products" class="section-p1">
+            <h2>Produtos em Destaque</h2>
+            <p>Confira nossa seleção dos notebooks mais desejados</p>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-brand="all">Todos</button>
+                <button class="filter-btn" data-brand="Dell">Dell</button>
+                <button class="filter-btn" data-brand="Samsung">Samsung</button>
+                <button class="filter-btn" data-brand="Acer">Acer</button>
+                <button class="filter-btn" data-brand="Asus">Asus</button>
             </div>
-            <div class="pro">
-                <img src="assets/produtos/p2.jpg" alt="">
-                <div class="desc">
-                    <span>Samsung</span>
-                    <h5>Notebook Samsung Galaxy Book2</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R$2519,10</h4>
+
+            <div class="pro-container">
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="assets/produtos/p3.jpg" alt="">
-                <div class="desc">
-                    <span>Acer</span>
-                    <h5>Notebook Acer Aspire 3</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+        </section>
+        
+        <section id="testimonials" class="section-p1 section-bg">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p>"Entrega super rápida e o notebook veio perfeito! Atendimento nota 10. Recomendo muito!"</p>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <h4>R$2399,99</h4>
+                    <h4>- Mariana Silva</h4>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="assets/produtos/p4.jpg" alt="">
-                <div class="desc">
-                    <span>Acer</span>
-                    <h5>Notebook Gamer Acer Nitro 5</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                 <div class="testimonial-card">
+                    <p>"Melhor preço que encontrei depois de muita pesquisa. O site é fácil de usar e o produto é de qualidade."</p>
+                    <div class="star-rating">
+                       <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <h4>R$5699,99</h4>
+                    <h4>- Ricardo Alves</h4>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
             </div>
-            <div class="pro">
-                <img src="assets/produtos/p5.jpg" alt="">
-                <div class="desc">
-                    <span>Asus</span>
-                    <h5>Notebook Gamer Asus Rog Strix G16</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R$11.499,99</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="assets/produtos/p6.jpg" alt="">
-                <div class="desc">
-                    <span>Asus</span>
-                    <h5>Notebook Gamer ASUS TUF Gaming F15</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R$5299,99</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="assets/produtos/p7.jpg" alt="">
-                <div class="desc">
-                    <span>Acer</span>
-                    <h5>Notebook Gamer Acer Predator Helios Neo</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R$8549,10</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="assets/produtos/p8.jpg" alt="">
-                <div class="desc">
-                    <span>Acer</span>
-                    <h5>Notebook Gamer Acer Nitro 5</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>R$5.599,99</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
+    <footer class="section-p1">
+        <p>© 2025, Gusttaaa E-Commerce de Notebooks</p>
+    </footer>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

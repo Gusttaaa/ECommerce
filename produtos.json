@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "title": "Notebook Gamer Dell G15",
+      "brand": "Dell",
+      "price": 4889.90,
+      "thumbnail": "assets/produtos/p1.jpg",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "title": "Notebook Samsung Galaxy Book2",
+      "brand": "Samsung",
+      "price": 2519.10,
+      "thumbnail": "assets/produtos/p2.jpg",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "title": "Notebook Acer Aspire 3",
+      "brand": "Acer",
+      "price": 2399.99,
+      "thumbnail": "assets/produtos/p3.jpg",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "title": "Notebook Gamer Acer Nitro 5",
+      "brand": "Acer",
+      "price": 5699.99,
+      "thumbnail": "assets/produtos/p4.jpg",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "title": "Notebook Gamer Asus Rog Strix G16",
+      "brand": "Asus",
+      "price": 11499.99,
+      "thumbnail": "assets/produtos/p5.jpg",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "title": "Notebook Gamer ASUS TUF Gaming F15",
+      "brand": "Asus",
+      "price": 5299.99,
+      "thumbnail": "assets/produtos/p6.jpg",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "title": "Notebook Gamer Acer Predator Helios Neo",
+      "brand": "Acer",
+      "price": 8549.10,
+      "thumbnail": "assets/produtos/p7.jpg",
+      "rating": 5
+    },
+    {
+      "id": 8,
+      "title": "Notebook Gamer Acer Nitro 5",
+      "brand": "Acer",
+      "price": 5599.99,
+      "thumbnail": "assets/produtos/p8.jpg",
+      "rating": 5
+    }
+  ]

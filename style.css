@@ -1,268 +1,437 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap');
-
+/* ======== 1. RESET E ESTILOS GLOBAIS ======== */
+/* Adiciona rolagem suave para todo o site */
+html {
+    scroll-behavior: smooth;
+}
+/* CSS Reset: Remove margens e paddings padrão do navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Spartan', sans-serif;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif; /* Usaremos a fonte Poppins, adicione-a no seu HTML */
 }
 
-h1{
-    font-size: 50px;
-    line-height: 64px;
-    color: #222;
+/* Variáveis de Cor: Facilita a mudança de cores no futuro */
+:root {
+    --bg-color: #f4f4f4; /* Um branco um pouco mais suave */
+    --dark-color: #1a1a1a; /* Preto para textos */
+    --primary-color: #007bff; /* Azul vibrante para botões e links */
+    --secondary-color: #ffffff; /* Branco puro para cards */
+    --gray-color: #6c757d; /* Cinza para textos secundários */
 }
 
-h2{
-    font-size: 46px;
-    line-height: 54px;
-    color: #222;
+/* Estilo base do corpo da página */
+body {
+    background-color: var(--bg-color);
+    color: var(--dark-color);
 }
 
-h4{
-    font-size: 20px;
-    color: #222;
-}
-
-h6{
-    font-weight: 700;
-    font-size: 12px;
-}
-
-p{
-    font-size: 16px;
-    color: #465b52;
-    margin: 15px 0 20px 0;
-}
-
-.section-p1{
+/* Classes de utilidade que usaremos depois */
+.section-p1 {
     padding: 40px 80px;
 }
 
-.section-m1{
-    margin: 40px 0;
+.section-bg {
+    background-color: var(--secondary-color);
 }
 
-body{
-    width: 100%;
+h1 {
+    font-size: 3rem; /* 48px */
+    line-height: 1.2;
 }
 
-.logo{
-    width: 10%;
+h2 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.3;
 }
 
-#header{
+p {
+    font-size: 1rem; /* 16px */
+    color: var(--gray-color);
+}
+
+/* ======== 2. HEADER (CABEÇALHO) ======== */
+
+#header {
     display: flex;
+    justify-content: space-between; /* Logo na esquerda, nav na direita */
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #E3E6F3;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
+    padding: 20px 80px; /* Espaçamento interno */
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+
+    /* Efeito "Sticky" (Fixo no topo) */
     position: sticky;
     top: 0;
     left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que ele fique acima de outros elementos */
 }
 
-#navbar{
+#header .logo {
+    width: 60px; /* Ajuste o tamanho da sua logo se necessário */
+}
+
+/* Estilo da lista de navegação */
+#navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    list-style: none; /* Remove as "bolinhas" da lista */
 }
 
-#navbar li{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
+/* Estilo de cada item da navegação */
+#navbar li {
+    margin-left: 30px; /* Espaçamento entre os links */
 }
 
-#navbar li a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
+/* Estilo dos links da navegação */
+#navbar li a {
+    color: var(--dark-color);
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    position: relative; /* Necessário para o efeito de sublinhado */
+    transition: color 0.3s ease;
 }
 
+/* Efeito Hover: muda a cor e adiciona um sublinhado */
 #navbar li a:hover,
-#navbar li a.active{
-    color: #088178;
-    
+#navbar li a.active {
+    color: var(--primary-color);
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after{
-    content: "";
-    width: 30%;
+#navbar li a::after {
+    content: '';
+    width: 0;
     height: 2px;
-    background-color: #088178;
+    background-color: var(--primary-color);
     position: absolute;
-    bottom: -4px;
-    left: 20px;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
-#hero{
-    background-color: #E3E6F3;
-    background-image:url(assets/hero.png);
-    height: 90vh;
+#navbar li a:hover::after,
+#navbar li a.active::after {
+    width: 100%; /* O sublinhado aparece no hover */
+}
+
+/* ======== 3. HERO SECTION ======== */
+
+#hero {
+    /* Imagem de Fundo */
+    background-image: url("assets/produtos/hero-bg.jpg"); /* <<-- COLOQUE UMA BOA IMAGEM AQUI */
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center center; /* Centraliza a imagem */
+    height: 90vh; /* Ocupa 90% da altura da tela */
     width: 100%;
-    background-size: cover;
-    background-position: top 25% right 0;
-    padding: 0 80px;
+
+    /* Layout para centralizar o conteúdo */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    justify-content: center; /* Alinha verticalmente ao centro */
+    align-items: flex-start; /* Alinha horizontalmente à esquerda */
+    
+    /* Espaçamento para o conteúdo não ficar colado na borda */
+    padding: 0 80px; 
 }
 
-#hero h4{
-    padding-bottom: 15px;
+/* Container para o texto, para dar um fundo sutil e melhorar a legibilidade */
+#hero .hero-content {
+    background-color: rgba(26, 26, 26, 0.5); /* Fundo preto semi-transparente */
+    padding: 40px;
+    border-radius: 8px; /* Bordas arredondadas */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo (moderno) */
 }
 
-#hero h1{
-    color: #088178;
+/* Estilizando os textos dentro da Hero */
+#hero h1, #hero h2, #hero p {
+    color: var(--secondary-color); /* Textos brancos para contrastar com o fundo */
 }
 
-#hero button{
-    background-image: url("assets/button.png");
-    background-color: transparent;
-    color: #088178;
-    border: 0;
-    padding: 14px 80px 14px 65px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
+#hero h2 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 400;
 }
 
-#feature{
+#hero h1 {
+    font-size: 3.5rem; /* 56px */
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 1.1rem; /* 18px */
+    color: rgba(255, 255, 255, 0.85); /* Branco um pouco transparente */
+    margin-bottom: 30px;
+    max-width: 600px; /* Limita a largura do parágrafo */
+}
+
+/* Estilo do Botão (Call to Action) */
+#hero .cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#hero .cta-button:hover {
+    background-color: #0056b3; /* Um azul um pouco mais escuro no hover */
+    transform: translateY(-3px); /* Efeito de "levantar" o botão */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ======== 4. FEATURES / BENEFÍCIOS ======== */
+
+#features {
     display: flex;
+    justify-content: space-around; /* Espaça os itens igualmente */
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    background-color: var(--secondary-color);
 }
 
-#feature .fe-box{
-    width: 180px;
+.feature-box {
+    width: 200px;
     text-align: center;
     padding: 25px 15px;
-    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
-    border: 1px solid #cce7d0;
-    border-radius: 4px;
-    margin: 15px 0;
+    border: 1px solid #e9e9e9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px; /* Adiciona um respiro entre as caixas */
 }
 
-#feature .fe-box:hover{
-    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1)
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
 }
 
-#feature .fe-box h6{
-    display: inline-block;
-    padding: 9px 8px 6px 8px;
-    line-height: 1;
-    border-radius: 4px;
-    color: #088178;
-    background-color: #fddde4;
-
-}
-
-#feature .fe-box:nth-child(2) h6{
-    background-color: #cdebbc;
-}
-
-#feature .fe-box:nth-child(3) h6{
-    background-color: #d1e8f2;
-}
-
-#feature .fe-box:nth-child(4) h6{
-    background-color: #cdd4f8;
-}
-
-#feature .fe-box:nth-child(5) h6{
-    background-color: #f6dbf6;
-}
-
-#feature .fe-box:nth-child(6) h6{
-    background-color: #fff2e5;
-}
-
-#feature .fe-box img {
-    width: 100%;
+.feature-box img {
+    width: 80px; /* Ajuste o tamanho dos ícones se necessário */
     margin-bottom: 10px;
 }
 
-#produto1 {
-    text-align: center;
+.feature-box h6 {
+    padding: 9px 8px 6px 8px;
+    background-color: #f0f8ff; /* Um fundo azul bem claro */
+    color: var(--primary-color);
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-#produto1 .pro{
-    width: 23%;
-    min-width: 250px;
-    padding: 10px 12px;
-    border: 1px solid #cce7d0;
-    border-radius: 25px;
+/* ======== 5. PRODUTOS EM DESTAQUE ======== */
+
+#products {
+    text-align: center; /* Centraliza o h2 e o p da seção */
+}
+
+#products h2 {
+    margin-bottom: 10px;
+}
+
+/* Container dos Botões de Filtro */
+.filter-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Deixa os botões com formato de "pílula" */
+    color: var(--dark-color);
     cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    margin: 15px 0;
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
+    border-color: var(--dark-color);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+/* Grid de Produtos */
+.pro-container {
+    display: grid;
+    /* Grid responsivo: cria colunas de no mínimo 250px e no máximo 1 fração do espaço */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Espaço entre os produtos */
+    padding-top: 20px;
+}
+
+/* Card Individual de Produto */
+.pro {
+    background-color: var(--secondary-color);
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Alinha o texto do card à esquerda */
 }
 
-#produto1 .pro:hover{
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+.pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
 }
 
-#produto1 .pro img{
+.pro img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-#produto1 .pro .desc{
-    text-align: start;
+.pro .desc {
     padding: 10px 0;
 }
 
-#produto1 .pro .desc span{
-    color: #606063;
-    font-size: 12px;
+.pro .desc span {
+    color: var(--gray-color);
+    font-size: 0.8rem;
 }
 
-#produto1 .pro-container{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    flex-wrap: wrap;
+.pro .desc h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 5px 0;
 }
 
-#produto1 .pro .desc h5{
-    padding-top: 7px;
-    color: #1a1a1a;
-    font-size: 14px;
+.pro .desc .star {
+    color: #FFD700; /* Cor de estrela (dourado) */
+    margin-bottom: 5px;
 }
 
-#produto1 .pro .desc i{
-    font-size: 12px;
-    color: rgb(243, 181, 25)
-}
-
-#produto1 .pro .desc h4{
-    padding-top: 7px;
-    font-size: 15px;
+.pro .desc h4 {
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #088178;
+    color: var(--primary-color);
 }
 
-#produto1 .pro .cart{
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
+.pro .cart {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
     background-color: #e8f6ea;
     font-weight: 500;
-    color: #088178;
+    color: var(--primary-color);
     border: 1px solid #cce7d0;
     position: absolute;
     bottom: 20px;
-    right: 10px;
+    right: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.pro .cart:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* ======== 6. DEPOIMENTOS (PROVA SOCIAL) ======== */
+
+#testimonials {
+    text-align: center;
+}
+
+#testimonials h2 {
+    margin-bottom: 40px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Para quebrar a linha em telas menores */
+}
+
+.testimonial-card {
+    background-color: #f8f9fa; /* Um cinza muito claro */
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px; /* Limita a largura de cada card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+.testimonial-card p::before {
+    content: '“'; /* Adiciona aspas no início */
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-right: 5px;
+    line-height: 0;
+}
+
+.testimonial-card .star-rating {
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+/* ======== 7. FOOTER (RODAPÉ) ======== */
+
+footer {
+    background-color: var(--dark-color);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+footer p {
+    color: var(--bg-color); /* Texto claro para contrastar com o fundo escuro */
+    font-size: 0.9rem;
+}
+
+/* Curva para suavizar a transição da Hero Section */
+#hero {
+    position: relative; /* Essencial para o posicionamento da curva */
+    overflow: hidden; /* Garante que nada "vaze" para fora */
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Posiciona no rodapé da seção, com 1px de sobreposição para evitar falhas */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altura da curva */
+    background: var(--bg-color); /* A cor de fundo da seção seguinte */
     
+    /* A mágica da curva acontece aqui */
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
 }
