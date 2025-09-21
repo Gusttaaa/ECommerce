@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" >
+</head>
+<body>
+
+    <header id="header">
+        <a href="#"><img src="http://localhost:3000/images/logo.png" class="logo" alt="Logo"></a>
+        <nav>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="carrinho.html"><i class="far fa-shopping-bag"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Performance e Design em um só lugar</h2>
+                <h1>Encontre o Notebook Perfeito para Você</h1>
+                <p>As melhores marcas com ofertas exclusivas e entrega para todo o Brasil.</p>
+                <a href="#products" class="cta-button">Ver Ofertas</a>
+            </div>
+            </section>
+
+        <section id="features" class="section-p1">
+            <div class="feature-box">
+                <img src="http://localhost:3000/images/f1.png" alt="Entrega Grátis">
+                <h6>Entrega Grátis</h6>
+            </div>
+            <div class="feature-box">
+                <img src="http://localhost:3000/images/f2.png" alt="Pedidos Online">
+                <h6>Pedidos Online</h6>
+            </div>
+            <div class="feature-box">
+                <img src="http://localhost:3000/images/f6.png" alt="Suporte 24h">
+                <h6>Suporte 24h</h6>
+            </div>
+             <div class="feature-box">
+                <img src="http://localhost:3000/images/f3.png" alt="Economize">
+                <h6>Economize</h6>
+            </div>
+        </section>
+
+        <section id="products" class="section-p1">
+            <h2>Produtos em Destaque</h2>
+            <p>Confira nossa seleção dos notebooks mais desejados</p>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-brand="all">Todos</button>
+                <button class="filter-btn" data-brand="Dell">Dell</button>
+                <button class="filter-btn" data-brand="Samsung">Samsung</button>
+                <button class="filter-btn" data-brand="Acer">Acer</button>
+                <button class="filter-btn" data-brand="Asus">Asus</button>
+            </div>
+
+            <div class="pro-container">
+                </div>
+        </section>
+        
+        <section id="testimonials" class="section-p1 section-bg">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p>"Entrega super rápida e o notebook veio perfeito! Atendimento nota 10. Recomendo muito!"</p>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h4>- Mariana Silva</h4>
+                </div>
+                 <div class="testimonial-card">
+                    <p>"Melhor preço que encontrei depois de muita pesquisa. O site é fácil de usar e o produto é de qualidade."</p>
+                    <div class="star-rating">
+                       <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <h4>- Ricardo Alves</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="section-p1">
+        <p>© 2025, Gusttaaa E-Commerce de Notebooks</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
